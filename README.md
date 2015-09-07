@@ -51,8 +51,12 @@ Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/
 * For local config files, use YAML 
 * For applications that have non-trivial configuration management, use [Spring Boot Cloud Configuration Server](https://github.com/spring-cloud/spring-cloud-config) *TODO: check if there is an alternative to using git for storing properties*
 * Use [Spring Profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html) to manage environments (dev, test, prod)
-* 
+
 #### Logging
+* Spring Boot is quite opinionated in terms of logging. You should follow those opinions
+* Use logback for logging
+* Apply some thought on the structure of your log messages. Eventually, log messages will end up in something like ElasticSearch for analytics and visualization, so make sure that the information in the log messages is easy to access and digest.
+* For more details, consult the [Spring Boot logging documentation](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)
 
 #### Debugging
 
