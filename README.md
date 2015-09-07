@@ -44,9 +44,17 @@ Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/
 * Stick to Maven best practices (most of them also apply to gradle builds). See [this resource](https://mestachs.wordpress.com/2012/05/17/maven-best-practices/) and [that resource](https://mestachs.wordpress.com/2012/05/17/maven-best-practices/) for more details.
 * Consult the chapter on [Maven](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-maven) and [Gradle](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-gradle) from the Spring Boot reference
 
-
-
 #### Testing
+
+#### Configuration
+* All application configuration has to be externalized.
+* For local config files, use YAML 
+* For applications that have non-trivial configuration management, use [Spring Boot Cloud Configuration Server](https://github.com/spring-cloud/spring-cloud-config) *TODO: check if there is an alternative to using git for storing properties*
+* Use [Spring Profiles](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-profiles.html) to manage environments (dev, test, prod)
+* 
+#### Logging
+
+#### Debugging
 
 ### Building Software for NodeJS
 
