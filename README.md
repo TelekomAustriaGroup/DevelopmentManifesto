@@ -45,14 +45,11 @@ Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/
 
 As described above, the overall goal is to pack your application services into single fat JARs that have all their dependencies included and can be started via `java -jar MyShinyTagService.jar`
 
-
 #### Build Process
 * Follow the established [Maven directory structure](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
 * Use either [Maven](http://books.sonatype.com/mvnex-book/reference/public-book.html) or [Gradle](https://docs.gradle.org/current/userguide/userguide_single.html) to process, compile, test, package your software
 * Stick to Maven best practices (most of them also apply to gradle builds). See [this resource](https://mestachs.wordpress.com/2012/05/17/maven-best-practices/) and [that resource](https://mestachs.wordpress.com/2012/05/17/maven-best-practices/) for more details.
 * Consult the chapter on [Maven](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-maven) and [Gradle](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-gradle) from the Spring Boot reference
-
-#### Testing
 
 #### Configuration
 * All application configuration has to be externalized.
@@ -70,9 +67,10 @@ As described above, the overall goal is to pack your application services into s
   * Unique Identiﬁers: request ID, User ID, Session ID, thread ID
   * Host Info: hostname & IP
   * Container Info: Image ID, Container ID, Process ID
-
-* Think about the implications of your application running inside a Docker container
+* Think about the implications of your application running inside a Docker container (e.g. logs written to SDOUT, logstash, etc)
 * For more details, consult the [Spring Boot logging documentation](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)
+
+#### Testing
 
 #### Debugging
 
