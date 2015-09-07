@@ -55,7 +55,15 @@ Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/
 #### Logging
 * Spring Boot is quite opinionated in terms of logging. You should follow those opinions
 * Use logback for logging
-* Apply some thought on the structure of your log messages. Eventually, log messages will end up in something like ElasticSearch for analytics and visualization, so make sure that the information in the log messages is easy to access and digest.
+* Apply some thought on the structure of your log messages. Eventually, log messages will end up in something like ElasticSearch for analytics and visualization, so make sure that the information in the log messages is easy to access and digest. For example, consider the following (taken from [this slideshare]()):
+  * When the event occurred: the timestamp 
+  * Structured Logs: JSON, KVP 
+  * Context: if someone bought a book… what book was it
+  * Unique Identiﬁers: request ID, User ID, Session ID, thread ID
+  * Host Info: hostname & IP
+  * Container Info: Image ID, Container ID, Process ID
+
+* Think about the implications of your application running inside a Docker container
 * For more details, consult the [Spring Boot logging documentation](http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html)
 
 #### Debugging
