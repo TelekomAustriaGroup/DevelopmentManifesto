@@ -2,7 +2,7 @@
 This repository presents principles, guidelines and opinions on how to build software for Telekom Austria Group.
 
 ### Status of this document
-
+- [ ] General Architecture: Microservice based, reactive, etc.
 - [ ] Target Platform: Which platform should be used (e.g. JVM based, NodeJS, Ruby) for what kind of development (e.g. for throw away stuff use NodeJS because of speed and productivity, for "tracer" code and production relevant stuff use a JVM langugage etc)
 - [ ]  Language Guideline: Best practices for Java, NodeJS, whatever (there are a lot of very comprehensive guidelines out there that we can reuse)
 - [ ]  Deployment Approach: How to package and deliver applications (e.g. traditional AppServer based delivery vs. fat JARs vs. dockerized applications)
@@ -22,6 +22,19 @@ In general, use the right tool for the Job. There are tons of platforms out ther
 * JavsScript: Weakly typed, dynamic type system --> Typescript as an alternative?
 
 ### Building Software for the JVM
+In general, you should heavily rely on the _Spring Framework_ ecosystem. Besides [Core Spring](http://projects.spring.io/spring-framework/), there are many projects with the Spring ecosystem that can be leveraged to build elegant, scalable, maintainable and performant applications. However, building a Spring based application should always start from the _Spring Boot parent POM_:
+
+```XML
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>${spring-boot.version}</version>
+</parent>
+```
+With `${spring-boot.version}` set to the most recent GA version (never _never_ depend on a snapshot version!). At the time of writing, the most recent version of Spring Boot is `1.2.5.RELEASE`. If you wander what Spring Boot is, here is the short summary from the Spring website:
+
+> Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration > and is designed to get you up and running as quickly as possible.
+
 
 #### Build Process
 * Follow the established [Maven directory structure](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
