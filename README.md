@@ -12,11 +12,17 @@ This repository presents principles, guidelines and opinions on how to build sof
 - [ ]  Documentation
 - [ ]  Versioning (it will be GIT but which git workflow to apply is the question)
 
+## Architectural Remarks
+This section describes how the overall architecture of TAG applications should look like. 
+
+### Microservices
+
+
 ## Target Platforms
 This section contains recommendations on which development platform to use for certain engineering tasks.
 
 ### General Considerations
-In general, use the right tool for the Job. There are tons of platforms out there that might seem to be a good choice for the particular problem you are trying to solve, however, we want you to build software either by relying on the _JVM_ or _NodeJS_. There will always be a tradeoff between productivity, performance, maturity and maintainability that has to be considered, but for the time being, we do not believe that NodeJS should be used in mission critical TAG software, for the following reasons:
+In general, use the right tool for the Job. There are tons of platforms out there that might seem to be a good choice for the particular problem you are trying to solve, however, we want you to build software either by relying on the _JVM_ or _NodeJS_. There will always be a tradeoff between productivity, performance, maturity and maintainability that has to be considered, but for the time being, we do not believe that NodeJS should be used in mission critical TAG software, for the following reasons *TODO: provide a reasonable list of arguments against NodeJS in production*:
 * Debugging
 * Tool support
 * JavsScript: Weakly typed, dynamic type system --> Typescript as an alternative?
@@ -36,6 +42,8 @@ With `${spring-boot.version}` set to the most recent GA version (never _never_ d
 > Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.
 
 Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) for details on Spring Boot.
+
+As described above, the overall goal is to pack your application services into single fat JARs that have all their dependencies included and can be started via `java -jar MyShinyTagService.jar`
 
 
 #### Build Process
@@ -77,6 +85,14 @@ Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/
 
 ### TL;DR
 Use NodeJS for building prototypes; Use a JVM based language for all other development tasks. In particular stick to either Java, Groovy or Scala on the JVM. 
+
+## Language Guidelines
+
+## Application Performance
+
+## Documentation and Issue Tracking
+
+## Versioning
 
 ### Constributors
 [Oliver Moser](mailto: oliver.moser@telekomaustria.com)
