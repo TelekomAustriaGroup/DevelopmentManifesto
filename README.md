@@ -33,13 +33,16 @@ In general, you should heavily rely on the _Spring Framework_ ecosystem. Besides
 ```
 With `${spring-boot.version}` set to the most recent GA version (never _never_ depend on a snapshot version!). At the time of writing, the most recent version of Spring Boot is `1.2.5.RELEASE`. If you wander what Spring Boot is, here is the short summary from the Spring website:
 
-> Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration > and is designed to get you up and running as quickly as possible.
+> Takes an opinionated view of building production-ready Spring applications. Spring Boot favors convention over configuration and is designed to get you up and running as quickly as possible.
+
+Consult the [Spring Boot reference docs](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/) for details on Spring Boot.
 
 
 #### Build Process
 * Follow the established [Maven directory structure](https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html)
 * Use either [Maven](http://books.sonatype.com/mvnex-book/reference/public-book.html) or [Gradle](https://docs.gradle.org/current/userguide/userguide_single.html) to process, compile, test, package your software
 * Stick to Maven best practices (most of them also apply to gradle builds). See [this resource](https://mestachs.wordpress.com/2012/05/17/maven-best-practices/) and [that resource](https://mestachs.wordpress.com/2012/05/17/maven-best-practices/) for more details.
+* Consult the chapter on [Maven](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-maven) and [Gradle](http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using-boot-gradle) from the Spring Boot reference
 
 
 
