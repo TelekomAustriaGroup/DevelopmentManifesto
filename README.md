@@ -15,9 +15,21 @@ This repository presents principles, guidelines and opinions on how to build sof
 ## Architectural Remarks
 This section describes how the overall architecture of TAG applications should look like. 
 
-### Microservices
+### Frontend Technologies
 
+### Middleware Technologies
 
+#### Microservice based SOA
+
+#### Service Discovery
+
+### Dataend Technologies
+
+### Containerized Applications 
+
+#### Docker
+
+#### Kubernetes
 ## Target Platforms
 This section contains recommendations on which development platform to use for certain engineering tasks.
 
