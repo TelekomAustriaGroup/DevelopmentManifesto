@@ -28,6 +28,24 @@ This section describes how the overall architecture of TAG applications should l
 ### Containerized Applications 
 
 #### Docker
+There is the *What is Docker?* statement from the [Docker Website](http://www.docker.io):
+
+>Docker is an open platform for building, shipping and running distributed applications. It gives programmers, development teams and operations engineers the common toolbox they need to take advantage of the distributed and networked nature of modern applications.
+
+If you are not familiar with Docker you should probably start by watching [this video](https://www.youtube.com/watch?v=Q5POuMHxW-0)
+
+Here are the most important points why we use Docker
+
+* provides you with the means to ship
+  * packaged: your application is delivered as a *Docker Image* 
+  * well defined: a single `Dockerfile` defines the structure and content of Docker images
+  * isolated: 
+  * re-locateable:
+  * scalable:
+* central authority (*Docker registry*) to locate and manage Docker images
+  * Public or private registry (for TAG internal Docker images) 
+* once you understand how Docker works, it is super easy to work with 
+
 
 #### Kubernetes
 ## Target Platforms
