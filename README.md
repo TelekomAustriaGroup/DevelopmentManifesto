@@ -7,7 +7,7 @@ The TAG development manifesto is heavily influenced by both the ideas and princi
 Other principles and best practices that are not based upon our own past experience are explicitly backed by the related source (i.e. URL).
 
 ## Building Idiomatic TAG Software 
-The overall goal when building software systems for TAG is to deliver best-of-breed OTT solutions. Main characteristics of this OTT solution delivery process are *cost-effectiveness*, *time-to-value*, *customer satisfaction* as well as *sustainability*. Those rather high-level and business centric goals can be broken down into the following technical considerations. Cost-effectiveness and time-to-value can both be achieved by relying on *reproducable* software components and *immutable* infrastructures [1](#fowler1). 
+The overall goal when building software systems for TAG is to deliver best-of-breed OTT solutions. Main characteristics of this OTT solution delivery process are *cost-effectiveness*, *time-to-value*, *customer satisfaction* as well as *sustainability*. Those rather high-level and business centric goals can be broken down into the following technical considerations. Cost-effectiveness and time-to-value can both be achieved by relying on *reproducable* software components and *immutable* infrastructures. In short, a  [[1](#fowler1), [2](#computerweek)]. 
 
 ### Status of this document
 - [ ] General Architecture: Microservice based, reactive, etc.
@@ -22,5 +22,9 @@ The overall goal when building software systems for TAG is to deliver best-of-br
 
 ### References
 <a href="http://chadfowler.com/blog/2013/06/23/immutable-deployments/" name="fowler1">Chad Fowler: Trash Your Servers and Burn Your Code: Immutable Infrastructure and Disposable Components</a>
+
+<a href="http://www.computerweekly.com/feature/Cloud-frozen-pizza-model-and-the-immutable-infrastructure" name="computerweekly">Computer Weekly: Cloud, frozen pizza model and the immutable infrastructure</a>
+
+
 ### Constributors
 [Oliver Moser](mailto: oliver.moser@telekomaustria.com)
