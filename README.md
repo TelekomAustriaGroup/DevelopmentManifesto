@@ -27,11 +27,11 @@ For more information of immutabiltity in infrastructure, Docker and Kubernetes r
 - [ ]  Versioning (it will be GIT but which git workflow to apply is the question)
 
 ### References
-<a href="http://chadfowler.com/blog/2013/06/23/immutable-deployments/" name="fowler1">[1] Chad Fowler: Trash Your Servers and Burn Your Code: Immutable Infrastructure and Disposable Components</a>
-<a href="http://www.computerweekly.com/feature/Cloud-frozen-pizza-model-and-the-immutable-infrastructure" name="computerweekly">[2] Computer Weekly: Cloud, frozen pizza model and the immutable infrastructure</a>
-<a href="http://techblog.netflix.com/2011/08/building-with-legos.html" name="legos">[3] Greg Orzell: Building with Legos</a>
-<a href="http://blog.james-carr.org/2013/07/24/immutable-servers-with-packer-and-puppet/" name="pecker">[4] James Carr: Immutable Servers With Packer and Puppet</a>
-<a href="http://kief.com/immutable-server.html" name="blikis">[5] Kief Morris: Immutable Server Blikis</a>
+- <a href="http://chadfowler.com/blog/2013/06/23/immutable-deployments/" name="fowler1">[1] Chad Fowler: Trash Your Servers and Burn Your Code: Immutable Infrastructure and Disposable Components</a>
+- <a href="http://www.computerweekly.com/feature/Cloud-frozen-pizza-model-and-the-immutable-infrastructure" name="computerweekly">[2] Computer Weekly: Cloud, frozen pizza model and the immutable infrastructure</a>
+- <a href="http://techblog.netflix.com/2011/08/building-with-legos.html" name="legos">[3] Greg Orzell: Building with Legos</a>
+- <a href="http://blog.james-carr.org/2013/07/24/immutable-servers-with-packer-and-puppet/" name="pecker">[4] James Carr: Immutable Servers With Packer and Puppet</a>
+- <a href="http://kief.com/immutable-server.html" name="blikis">[5] Kief Morris: Immutable Server Blikis</a>
 
 
 ### Constributors
