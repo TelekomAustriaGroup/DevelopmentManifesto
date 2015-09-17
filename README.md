@@ -35,5 +35,5 @@ For more information of immutabiltity in infrastructure, Docker and Kubernetes r
 - <a href="http://kief.com/immutable-server.html" name="blikis">[5] Kief Morris: Immutable Server Blikis</a>
 
 
-### Constributors
+### Contributors
 [Oliver Moser](mailto: oliver.moser@telekomaustria.com)
