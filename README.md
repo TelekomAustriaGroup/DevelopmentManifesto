@@ -6,7 +6,7 @@ The TAG development manifesto is heavily influenced by both the ideas and princi
 
 Other principles and best practices that are not based upon our own past experience are explicitly backed by the related source (i.e. URL).
 
-<span class="mega-octicon octicon-alert"></span>DISCALIMER: THIS DOCUMENT IS WORK IN PROGRESS<span class="mega-octicon octicon-alert"></span>
+<span class="mega-octicon octicon-alert"></span>DISCLAIMER: THIS DOCUMENT IS WORK IN PROGRESS<span class="mega-octicon octicon-alert"></span>
 
 ## Building Idiomatic TAG Software
 The overall goal when building software systems for TAG is to deliver best-of-breed OTT solutions. Main characteristics of this OTT solution delivery process are __cost-effectiveness__, __time-to-value__, __customer satisfaction__ as well as __sustainability__. Those rather high-level and business centric goals can be broken down into technical considerations. Those considerations are discussed in the following.
