@@ -6,6 +6,8 @@ The TAG development manifesto is heavily influenced by both the ideas and princi
 
 Other principles and best practices that are not based upon our own past experience are explicitly backed by the related source (i.e. URL).
 
+<span class="mega-octicon octicon-alert"></span>DISCALIMER: THIS DOCUMENT IS WORK IN PROGRESS<span class="mega-octicon octicon-alert"></span>
+
 ## Building Idiomatic TAG Software
 The overall goal when building software systems for TAG is to deliver best-of-breed OTT solutions. Main characteristics of this OTT solution delivery process are __cost-effectiveness__, __time-to-value__, __customer satisfaction__ as well as __sustainability__. Those rather high-level and business centric goals can be broken down into technical considerations. Those considerations are discussed in the following.
 
@@ -19,6 +21,7 @@ For more information of immutability in infrastructure, Docker and Kubernetes re
 ### Microservice Architecture (MSA)
 **TODO work in progress**
 
+For more information on Microservices and Spring Boot, see [[8](#fowler-msa), [9](#spring-boot-docs)]
 ### Status of this document
 - [ ] General Architecture: Microservice based, reactive, etc.
 - [ ] Target Platform: Which platform should be used (e.g. JVM based, NodeJS, Ruby) for what kind of development (e.g. for throw away stuff use NodeJS because of speed and productivity, for "tracer" code and production relevant stuff use a JVM langugage etc)
@@ -38,6 +41,8 @@ For more information of immutability in infrastructure, Docker and Kubernetes re
 - <a href="http://kief.com/immutable-server.html" name="blikis">[5] Kief Morris: Immutable Server Blikis</a>
 - <a name="cw-k8s" href="http://www.computerweekly.com/feature/Demystifying-Kubernetes-the-tool-to-manage-Google-scale-workloads-in-the-cloud">[6] Computer Weekly: Demystifying Kubernetes: the tool to manage Google-scale workloads in the cloud</a>
 - <a name="docker-book" href="http://www.amazon.com/Docker-Book-Containerization-new-virtualization-ebook/dp/B00LRROTI4/ref=sr_1_2?ie=UTF8&qid=1443165177&sr=8-2&keywords=docker">[7] The Docker Book: Containerization is the new virtualization</a>
+- <a name="msa-fowler" href="http://martinfowler.com/articles/microservices.html">[8] Martin Fowler, James Lewis: Microservices</a>
+- <a name="spring-boot-docs" href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/">[9] Spring Boot Reference Documentation</a>
 
 ### Contributors
 [Oliver Moser](mailto: oliver.moser@telekomaustria.com)
