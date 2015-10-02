@@ -23,8 +23,60 @@ For more information of immutability in infrastructure, Docker and Kubernetes re
 
 ### Microservice Architecture (MSA)
 **TODO work in progress**
+TAG is a proponent of building distributed systems based upon **Microservices**. Microservices are
+an architectural style similar to SOA - some even say that in fact MSA is SOA [[11](#jones-soa)].
+MSA. In short, MSA refers to building complex applications that are composed of small,
+independent processes communicating over language-agnostic APIs [[12](#msa-wikipedia)].
+This means that in contrast to monolithic applications where the whole functionality and
+business logic is provided by a single deployable entity (say an EAR file), the application
+compirises many small services with a very specific functionality that can be developed, tested
+and deployed seperately. This also implies that you are not bound to a single programming
+language, toolstack or database for your application, but are rather free to use
+the right tool for the job. **TODO talk about the pro's and cons of "right tool for the job approach"**
 
-For more information on Microservices and Spring Boot, see [[8](#fowler-msa), [9](#spring-boot-docs)]
+With MSA, you pursuing a "shared nothing" approach. What this means, for instance,
+is that there is no shared database, and hence, also no shared data model. Each
+microservice has its own view of the domain that it is serving. What is required though
+is that for interaction between microservices, APIs and the structure of messages
+that will be exchanged have to be well known.
+
+At TAG, we heavily rely on the [Spring Framework](http://projects.spring.io/spring-framework/) ecosystem for building services.
+In particular, we use [Spring Boot](http://projects.spring.io/spring-boot/) as the foundation for building microservices.
+In short, Spring Boot uses core Spring components as well as third party libraries
+to provide a platform to build production ready microservices with minimal effort.
+Spring Boot microservices are packaged as "fat JARs" - everything that the microservice
+needs to run is packaged in this single JAR file. Hence, there is no need for an
+application server or servlet container - just run the fat JAR via `java -jar myService.jar`.
+The main benefits that you get when building Spring Boot based services are **(1) starter POMs for simple Maven based configuration and builds**, **(2) production relevant features such as
+health checks or performance metrics** **(3) automatic configuration of Spring components (e.g. data repositories)** as well as **(4) highly flexible configuration management**.
+
+for building "web-based" microservices (e.g. edge services that provide a RESTful API to their clients), depending on the performance requirements of the service, TAG either uses [Spring MVC](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/mvc.html) - which is preconfigured when including `spring-boot-starter-web` in your pom file - or,
+in case you have high-throughput requirements, we build upon [vert.x](http://www.vertx.io) on top of Spring Boot. With vert.x it is possible to get into the range of 100K+ requests
+per second for simple services. Such a high level of concurrency is not always required,
+and since configuration of vert.x is more complex that relying on Spring-only components,
+you should consider the tradeoff. Moreover, using vert.x with blocking code (e.g. Spring Data based JPA repositories are blocking per default), you either have to take special care and wrap the relevant parts of your code within a "blocking code" section, or - the better alternative - find a non-blocking equivalent of your code (c.f. [[13](#mongo-reactive),[14](#jpa-async)])
+
+Another important aspect in MSA is service discovery. Spring Boot comes with support
+for various Netflix OSS libraries [15](#spring-cloud-netflix) and integrates with
+[Eureka](https://github.com/Netflix/eureka), but at TAG we use a simple approach based on
+DNS names and Kubernetes services. Based on the Spring Boot fat JAR, we build Docker
+containers. Those docker containers are then referenced in k8s services and replication
+controllers, and the DNS name of the service and its IP address are announced via
+[SkyDNS](https://github.com/skynetservices/skydns) and the related [Kubernetes cluster addon](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/dns). Hence,
+if service A requests information from service B, service A just needs the DNS name of
+service B. This DNS name refers to the (stable) IP address of the k8s service. Therefore,
+it is not required that service A knows the IP addresses of all instances of service B. Additionally, you get simple load balancing of service B for free via the k8s service (and replication controller that supervises the running instances of service B).
+
+For more information on Microservices and Spring Boot, see [[8](#fowler-msa), [9](#spring-boot-docs), [10](#nginx-msa)]
+
+### Frontend technologies
+**TODO**
+
+### Build Pipeline
+**TODO**
+
+
+
 ### Status of this document
 - [ ] General Architecture: Microservice based, reactive, etc.
 - [ ] Target Platform: Which platform should be used (e.g. JVM based, NodeJS, Ruby) for what kind of development (e.g. for throw away stuff use NodeJS because of speed and productivity, for "tracer" code and production relevant stuff use a JVM langugage etc)
@@ -46,6 +98,12 @@ For more information on Microservices and Spring Boot, see [[8](#fowler-msa), [9
 - <a name="docker-book" href="http://www.amazon.com/Docker-Book-Containerization-new-virtualization-ebook/dp/B00LRROTI4/ref=sr_1_2?ie=UTF8&qid=1443165177&sr=8-2&keywords=docker">[7] The Docker Book: Containerization is the new virtualization</a>
 - <a name="msa-fowler" href="http://martinfowler.com/articles/microservices.html">[8] Martin Fowler, James Lewis: Microservices</a>
 - <a name="spring-boot-docs" href="http://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/">[9] Spring Boot Reference Documentation</a>
+- <a name="nginx-msa" href="https://www.nginx.com/blog/introduction-to-microservices/">[10] Chris Richardson: Introduction to Microservices</a>
+- <a name="jones-soa" href="http://service-architecture.blogspot.co.uk/2014/03/microservices-is-soa-for-those-who-know.html?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed:+ServiceArchitecture+%28Service+Architecture+-+SOA%29">[11] Steve Jones: Microservices is SOA, for those who know what SOA is.</a>
+- <a name="msa-wikipedia" href="https://en.wikipedia.org/wiki/Microservices">[12] Wikipedia: Microservices</a>
+- <a name="mongo-reactive" href="http://mongodb.github.io/mongo-java-driver/3.0/driver-async/">[13] MongoDB Async Driver</a>
+- <a name="jpa-async" href="http://docs.spring.io/spring-data/jpa/docs/1.9.0.RELEASE/reference/html/#repositories.query-async">[14] Spring Data: Async query results</a>
+- <a name="spring-cloud-netflix" href="http://cloud.spring.io/spring-cloud-netflix/">[14] Spring Cloud Netflix</a>
 
 ### Contributors
 [Oliver Moser](mailto: oliver.moser@telekomaustria.com)
