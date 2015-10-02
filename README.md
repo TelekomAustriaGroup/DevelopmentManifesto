@@ -57,7 +57,7 @@ and since configuration of vert.x is more complex that relying on Spring-only co
 you should consider the tradeoff. Moreover, using vert.x with blocking code (e.g. Spring Data based JPA repositories are blocking per default), you either have to take special care and wrap the relevant parts of your code within a "blocking code" section, or - the better alternative - find a non-blocking equivalent of your code (c.f. [[13](#mongo-reactive),[14](#jpa-async)])
 
 Another important aspect in MSA is service discovery. Spring Boot comes with support
-for various Netflix OSS libraries [15](#spring-cloud-netflix) and integrates with
+for various Netflix OSS libraries [[15](#spring-cloud-netflix)] and integrates with
 [Eureka](https://github.com/Netflix/eureka), but at TAG we use a simple approach based on
 DNS names and Kubernetes services. Based on the Spring Boot fat JAR, we build Docker
 containers. Those docker containers are then referenced in k8s services and replication
@@ -103,7 +103,7 @@ For more information on Microservices and Spring Boot, see [[8](#fowler-msa), [9
 - <a name="msa-wikipedia" href="https://en.wikipedia.org/wiki/Microservices">[12] Wikipedia: Microservices</a>
 - <a name="mongo-reactive" href="http://mongodb.github.io/mongo-java-driver/3.0/driver-async/">[13] MongoDB Async Driver</a>
 - <a name="jpa-async" href="http://docs.spring.io/spring-data/jpa/docs/1.9.0.RELEASE/reference/html/#repositories.query-async">[14] Spring Data: Async query results</a>
-- <a name="spring-cloud-netflix" href="http://cloud.spring.io/spring-cloud-netflix/">[14] Spring Cloud Netflix</a>
+- <a name="spring-cloud-netflix" href="http://cloud.spring.io/spring-cloud-netflix/">[15] Spring Cloud Netflix</a>
 
 ### Contributors
 [Oliver Moser](mailto: oliver.moser@telekomaustria.com)
